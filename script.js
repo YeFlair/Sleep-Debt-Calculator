@@ -8,14 +8,15 @@ const dailySleepHours = {
     Sunday: 3,
   };
   
-  const sleepHours = day => dailySleepHours[day] || 0;
+  const getSleepHours = day => {
+    const sleepInput = document.getElementById(day);
+    const sleepHours = parseInt(sleepInput.value, 10);
+    return sleepHours || 0;
+  };
   
   const getActualSleepHours = () => {
-    let totalHours = 0;
-    for (const day in dailySleepHours) {
-      totalHours += sleepHours(day);
-    }
-    return totalHours;
+    const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    return days.reduce((total, day) => total + getSleepHours(day), 0);
   };
   
   const getIdealSleepHours = () => {
@@ -37,8 +38,8 @@ const dailySleepHours = {
   };
   
   const displaySleepDebt = () => {
-    const resultElement = document.getElementById("result");
-    resultElement.innerText = calculateSleepDebt();
+    const result = document.getElementById("result");
+    result.innerText = calculateSleepDebt();
   };
   
   document.getElementById("calculate-btn").addEventListener("click", displaySleepDebt);
