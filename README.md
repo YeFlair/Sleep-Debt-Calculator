@@ -1,36 +1,26 @@
 # Sleep Debt Calculator
-
-The Sleep Debt Calculator is a web application designed to help users understand their sleep patterns and determine if they are getting the proper sleep. The calculator compares the user's actual sleep hours with their ideal sleep hours and provides feedback on whether they are getting the perfect amount of sleep, need more rest, or get more sleep than required.
+A simple web application that calculates a user's sleep debt or sleep surplus based on their sleep hours during a week and their age.
 
 ### Features
+- Users can input their sleep hours for each day of the week
+- Users can input their age to determine the ideal sleep hours
+- Calculates and displays sleep debt or sleep surplus
+- Displays the ideal sleep time for the user's age
 
-* Calculate sleep hours for each day of the week
-* Compare actual sleep hours with ideal sleep hours
-* Provide feedback on sleep debt status
-* User-friendly interface
-* Installation and Usage
+### How to use
+- Open the index.html file in your web browser.
+- Enter your sleep hours for each day of the week.
+- Enter your age.
+- Click the "Calculate Sleep Debt" button.
+The ideal sleep time, total sleep hours, and sleep debt or surplus message will be displayed.
 
-To get started with the Sleep Debt Calculator, follow these steps:
-
-1. Clone the repository or download the source code.
-2. Open the index.html file in your web browser.
-3. Click the "Calculate Sleep Debt" button to get your sleep debt status.
-4. File Structure
-
-The Sleep Debt Calculator is organized into three main sections:
-
-- index.html: Contains the HTML structure and layout of the web application.
-- style.css: Contains the CSS styling for the user interface.
-- script.js: Contains the JavaScript code for the sleep debt calculation logic and DOM manipulation.
-Stretch Goals
-
-To improve and expand the functionality of the Sleep Debt Calculator, consider working on the following stretch goals:
-
-* User Input: Allow users to input their sleep hours for each day of the week, instead of using hardcoded values.
-* Custom Ideal Sleep Hours: Let users define their ideal sleep hours per day, rather than assuming a default value of 6 hours.
-* Sleep History: Implement a feature to store and display the user's sleep history, allowing them to track their sleep patterns over time.
-* Visualizations: Create graphs or charts to help users visualize their sleep data, making it easier to identify trends and patterns.
-* Responsive Design: Make the user interface responsive for better usability on various devices, such as tablets and smartphones.
+### Stretch Goals
+- Add a responsive design to make the Sleep Debt Calculator usable on mobile devices and tablets.
+- Implement local storage to save the user's sleep hours and age input so the data persists across browser sessions.
+- Create an interactive chart to visualize the user's sleep hours compared to ideal ones.
+- Users can input their sleep hours for multiple weeks and calculate an average sleep debt or surplus.
+- Add a sleep quality assessment feature that allows users to rate the quality of their sleep on a scale of 1-5. Use this additional information to provide more personalized sleep recommendations.
+Implement user account functionality to allow multiple users to save their sleep data and track their sleep progress over time.
 
 ### Contribute
 
