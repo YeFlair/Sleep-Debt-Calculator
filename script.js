@@ -1,25 +1,4 @@
-const dailySleepHours = {
-    Monday: 3,
-    Tuesday: 3,
-    Wednesday: 3,
-    Thursday: 6,
-    Friday: 6,
-    Saturday: 6,
-    Sunday: 3,
-  };
-  
-  const getSleepHours = day => {
-    const sleepInput = document.getElementById(day);
-    const sleepHours = parseInt(sleepInput.value, 10);
-    return sleepHours || 0;
-  };
-  
-  const getActualSleepHours = () => {
-    const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-    return days.reduce((total, day) => total + getSleepHours(day), 0);
-  };
-  
-  const getIdealSleepHours = age => {
+const calculateIdealSleepHours = age => {
     if (age >= 3 && age <= 5) {
       return 91;
     } else if (age >= 6 && age <= 12) {
@@ -31,29 +10,35 @@ const dailySleepHours = {
     }
   };
   
-  const calculateSleepDebt = (actualSleepHours, idealSleepHours) => {
-    const difference = idealSleepHours - actualSleepHours;
-    if (difference > 0) {
-      return `Your sleep debt is ${difference} hours.`;
-    } else if (difference < 0) {
-      return `You got more sleep than needed. Your sleep surplus is ${Math.abs(difference)} hours.`;
+  const getSleepHours = dayId => {
+    const dayHours = parseFloat(document.getElementById(dayId).value);
+    return dayHours || 0;
+  };
+  
+  const getTotalSleepHours = () => {
+    const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+    return days.reduce((total, day) => total + getSleepHours(day), 0);
+  };
+  
+  const displayResults = (idealSleepTime, totalSleepHours, sleepDebt) => {
+    document.getElementById('ideal-sleep-time').innerText = `Ideal sleep time: ${idealSleepTime} hours`;
+    document.getElementById('total-sleep-hours').innerText = `Total sleep hours: ${totalSleepHours} hours`;
+  
+    if (sleepDebt < 0) {
+      document.getElementById('result').innerText = `You got ${-sleepDebt} more hours of sleep than needed.`;
+    } else if (sleepDebt === 0) {
+      document.getElementById('result').innerText = 'You got the perfect amount of sleep.';
     } else {
-      return "You got the perfect amount of sleep.";
+      document.getElementById('result').innerText = `You have a sleep debt of ${sleepDebt} hours. You should get more rest.`;
     }
   };
   
-  const displaySleepDebt = () => {
-    const totalSleepHours = getActualSleepHours();
-    const userAgeInput = document.getElementById("user-age");
-    const userAge = parseInt(userAgeInput.value, 10);
-    const idealSleepHours = getIdealSleepHours(userAge);
-    const result = document.getElementById("result");
-    const totalSleepHoursElement = document.getElementById("total-sleep-hours");
-    const idealSleepTimeElement = document.getElementById("ideal-sleep-time"); // Add this line
+  document.getElementById('calculate-btn').addEventListener('click', () => {
+    const userAge = parseInt(document.getElementById('user-age').value);
+    const idealSleepTime = calculateIdealSleepHours(userAge);
+    const totalSleepHours = getTotalSleepHours();
+    const sleepDebt = idealSleepTime - totalSleepHours;
   
-    idealSleepTimeElement.innerText = `Ideal Sleep Time: ${idealSleepHours} hours`; // Add this line
-    totalSleepHoursElement.innerText = `Total Sleep Hours: ${totalSleepHours}`;
-    result.innerText = calculateSleepDebt(totalSleepHours, idealSleepHours);
-  };
+    displayResults(idealSleepTime, totalSleepHours, sleepDebt);
+  });
   
-document.getElementById("calculate-btn").addEventListener("click", displaySleepDebt);

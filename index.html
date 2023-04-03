@@ -3,37 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sleep Debt Calculator</title>
   <link rel="stylesheet" href="styles.css">
+  <title>Sleep Debt Calculator</title>
 </head>
-<!-- ... -->
 <body>
-    <h1>Sleep Debt Calculator</h1>
-  
-    <div id="sleep-inputs">
-      <label for="Monday">Monday:</label>
-      <input type="number" id="Monday" min="0" step="1" value="0"><br>
-      <label for="Tuesday">Tuesday:</label>
-      <input type="number" id="Tuesday" min="0" step="1" value="0"><br>
-      <label for="Wednesday">Wednesday:</label>
-      <input type="number" id="Wednesday" min="0" step="1" value="0"><br>
-      <label for="Thursday">Thursday:</label>
-      <input type="number" id="Thursday" min="0" step="1" value="0"><br>
-      <label for="Friday">Friday:</label>
-      <input type="number" id="Friday" min="0" step="1" value="0"><br>
-      <label for="Saturday">Saturday:</label>
-      <input type="number" id="Saturday" min="0" step="1" value="0"><br>
-      <label for="Sunday">Tuesday:</label>
-      <input type="number" id="Sunday" min="0" step="1" value="0"><br>
-    </div>
-    <label for="user-age">Age:</label>
-  <input type="number" id="user-age" min="0" step="1" value="0"><br> 
-  
-    <button id="calculate-btn">Calculate Sleep Debt</button>
-    <p id="ideal-sleep-time"></p> 
-    <p id="total-sleep-hours"></p>
-    <p id="result"></p>
-    <script src="script.js"></script>
-  </body>
-  
+  <h1>Sleep Debt Calculator</h1>
+
+  <div id="sleep-inputs">
+    <label for="monday">Monday:</label>
+    <input type="number" id="monday" min="0" step="0.5" value="0">
+    <label for="tuesday">Tuesday:</label>
+    <input type="number" id="tuesday" min="0" step="0.5" value="0">
+    <label for="wednesday">Wednesday:</label>
+    <input type="number" id="wednesday" min="0" step="0.5" value="0">
+    <label for="thursday">Thursday:</label>
+    <input type="number" id="thursday" min="0" step="0.5" value="0">
+    <label for="friday">Friday:</label>
+    <input type="number" id="friday" min="0" step="0.5" value="0">
+    <label for="saturday">Saturday:</label>
+    <input type="number" id="saturday" min="0" step="0.5" value="0">
+    <label for="sunday">Sunday:</label>
+    <input type="number" id="sunday" min="0" step="0.5" value="0">
+  </div>
+  <label for="user-age">Age:</label>
+  <input type="number" id="user-age" min="0" step="1" value="0"><br>
+
+  <button id="calculate-btn">Calculate Sleep Debt</button>
+  <p id="ideal-sleep-time"></p>
+  <p id="total-sleep-hours"></p>
+  <p id="result"></p>
+  <script src="script.js"></script>
+</body>
 </html>
