@@ -1,6 +1,9 @@
 # Sleep Debt Calculator
 A simple web application that calculates a user's sleep debt or sleep surplus based on their sleep hours during a week and their age.
 
+## Blog: 
+[Sleep Matters: Understanding sleep through code.](https://medium.com/@CoolTableNerd/sleep-matters-understanding-sleep-through-code-fd13ebb50efc)
+
 ### Features
 - Users can input their sleep hours for each day of the week
 - Users can input their age to determine the ideal sleep hours
